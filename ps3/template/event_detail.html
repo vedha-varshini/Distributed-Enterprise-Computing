@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><title>{{ event.name }}</title></head>
+<body>
+    <h1>{{ event.name }}</h1>
+    <p>{{ event.detail }}</p>
+    <p>Organized by: {{ event.organizer }}</p>
+    <h2>Shows</h2>
+    <ul>
+        {% for show in shows %}
+        <li><a href="{{ url_for('show_detail', show_id=show._id) }}">{{ show.start_time }} - {{ show.end_time }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head><title>Show Details</title></head>
+<body>
+    <h1>{{ show.start_time }} - {{ show.end_time }}</h1>
+    <p>Total tickets booked: {{ total_tickets }}</p>
+    <h2>Book Tickets</h2>
+    <form action="{{ url_for('book_ticket', show_id=show._id) }}" method="post">
+        <label for="customer">Name:</label>
+        <input type="text" id="customer" name="customer">
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" id="price" name="price">
+        <label for="no_of_seats">Number of Seats:</label>
+        <input type="number" id="no_of_seats" name="no_of_seats">
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html>

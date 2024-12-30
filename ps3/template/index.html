@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head><title>Stage Events</title></head>
+<body>
+    <h1>Stage Events</h1>
+    <ul>
+        {% for event in events %}
+        <li><a href="{{ url_for('event_detail', event_id=event._id) }}">{{ event.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
